@@ -43,6 +43,13 @@ vastly outperforming the SVC classifier. Additionaly, I implemented a method for
 uncertainty in the predictions of the BDT, based on using the staged probabilities for each 
 prediction to calculate a standard deviation in the probability of each prediction, and using
 that standard deviation to impose upper and lower limits in the number of positive and negative 
-heart disease results. 
+heart disease results.
+
+-Iris_SVC: for this dataset, a 3 category classification task is achieved using the Support
+Vector Classifier with linear kernel. The usual procedure is followed for the classification,
+using a 3 category confusion matrix and metrics such as accuracy, recall, precision and F1 to
+evaluate. The SVC has an outstanding performance with this dataset. I also use this example
+to showcase useful plots such as: pair plot, box plot, violin plot, swarm plot and
+correlation heatmap of the dataset features.     
  
  
