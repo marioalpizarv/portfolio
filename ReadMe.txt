@@ -1,7 +1,7 @@
 In this file, I provide a general description about each of the files found in this repository,
 the goal of each one, the algorithms used and other relevant information.
 
--Countries_GDP_PerCapita_2023: this example uses LinearRegression by sklearn to predict the
+-CountriesGDPPerCapita_LinearRegression: this example uses LinearRegression by sklearn to predict the
 GDP Per Capita of a list of 195 countries. First, I do some data cleaning, and remove
 characters that can not be converted to float values, such as '$' and '%'. Next, I calculate
 the GDP per capita by dividing the GDP column by the Population column for each country. 
