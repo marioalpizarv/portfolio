@@ -1,14 +1,37 @@
-In this file, I provide a general description of each of the files found in this repository,
-the goal of each one, the algorithms used, and other relevant information.
+========================================================================================================
+Short description:
+
+Classification methods used: Support Vector Classifier (HeartDisease_SVC, Iris_SVC), 
+Boosted Decision Tree (HeartDisease_BDT) and Fully Connected Neural Networks (Iris_NN_PyTorch, 
+Iris_NN_TensorFlow). The metrics used for evaluation include: confusion matric, accuracy, specificity, 
+precision, mathew's correlation coefficient, F1 score, ROC and PR curves with area under the curve
+(AUC). Additional plots shown include: pair plots, box plots, violin plots, swarm plots and
+correlation heat maps. 
+
+The Neural Networks are implemented with PyTorch and TensorFlow, each including hidden layers,
+specified activation functions for each and for the output layer, as well as accuracy and loss
+function evlauation, and a confusion matrix to verify.
+
+Linear regression is implemented with sklearn (CountriesGDPPerCapita_LinearRegression), including the 
+study of some correlation between features. The R-squared score is used for evaluation, and the 
+coefficients of each feature are shown to determine which are the most significant for the predictions.
+
+Clustering is used as a method of unsupervised machine learning (KMeans_WineClustering). Inertia is 
+used for plotting an elbow curve and determine the optimal number of clusters. The metric silhouette
+is also used to evaluate the model. a pair plot is also included to look for a pair of features with 
+a good separation between cluster labels. These features are used to obtain a scatter plot to show 
+the separation between clusters. 
+
+========================================================================================================
+Detalied description of each file:
 
 -CountriesGDPPerCapita_LinearRegression: This example uses LinearRegression by sklearn to predict 
-the GDP Per Capita of a list of 195 countries. First, I do some data cleaning, and remove
-characters that can not be converted to float values, such as '$' and '%'. Next, I calculate
+the GDP Per Capita of a list of 195 countries. First, I do some data cleaning. Next, I calculate
 the GDP per capita by dividing each country's GDP column by the Population column. 
 After that, I created the X dataset by removing the target variable 'GDP Per Capita', and
 the Y dataset which includes only the target variable. Afterward, I split the data in training
 and test, using an 80-20 split respectively, initialize the linear regression model, train it,
- and test it with the test dataset. For evaluation, I use the R-square score. I also include
+and test it with the test dataset. For evaluation, I use the R-square score. I also include
 the coefficients of each feature, to see which is more significant when predicting a country's
 GDP per capita.
 
@@ -62,6 +85,12 @@ of 0.001. The NN is then evaluated with a correlation matrix and perfectly class
 this time using TensorFlow. The specifications of this FCNN are almost identical to the ones used
 for PyTorch, two hidden layers with relu as activation function, and softmax for the output layer.
 This time, only 100 epochs are used for training, but the same perfect classification results are
-obtained.    
- 
- 
+obtained.
+
+-KMeans_WineClustering: here I use the unsupervised machine learning algorithm clustering. This 
+dataset has features for wine from 3 different vineyards, the task is to cluster the wine 
+instances and group each to the wineyard it came from. For this, the KMeans algorithm from sklearn
+is used, along with the intertia metric, the elbow curve and the silhouette metric. Lastly, I 
+include a pairplot to look for a pair of features that create a good separation between clusters
+and do a scatter plot to show how each cluster is separated from the rest.    
+========================================================================================================
