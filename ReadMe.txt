@@ -52,6 +52,10 @@ evaluate. The SVC has an outstanding performance with this dataset. I also use t
 to showcase useful plots such as pair plots, box plots, violin plots, swarm plots and
 correlation heat maps of the dataset features. 
 
--Iris_NN_PyTorch: Here I classify the Iris dataset with a fully connected neural network that ReLU activation function. For this, I use the PyTorch framework, including the use of torch tensors.    
+-Iris_NN_PyTorch: Here I classify the Iris dataset with a fully connected neural network that 
+uses the ReLU activation function. For this, I use the PyTorch framework, including the use of
+torch tensors. The NN has two hidden layers, and is trained for 1000 epochs, using the Cross
+Entropy loss function and the Adam criterion for updating the weights, with a learning rate 
+of 0.001. The NN is then evaluated with a correlation matrix and perfectly classifies the dataset.    
  
  
