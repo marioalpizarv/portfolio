@@ -1,16 +1,16 @@
 ========================================================================================================
 Short description:
 
-Classification methods used: Support Vector Classifier (HeartDisease_SVC, Iris_SVC), 
-Boosted Decision Tree (HeartDisease_BDT) and Fully Connected Neural Networks (Iris_NN_PyTorch, 
-Iris_NN_TensorFlow). The metrics used for evaluation include: confusion matric, accuracy, specificity, 
-precision, mathew's correlation coefficient, F1 score, ROC and PR curves with area under the curve
-(AUC). Additional plots shown include: pair plots, box plots, violin plots, swarm plots and
-correlation heat maps. 
+Neural Networks for classification are implemented with PyTorch and TensorFlow (Iris_NN_PyTorch, 
+Iris_NN_TensorFlow). Each of these includes the outline of the input, output and hidden layers, specified 
+activation functions for each layer, as well as accuracy and loss function evlauation, and a confusion 
+matrix to verify the accuracy of the classification results.
 
-The Neural Networks are implemented with PyTorch and TensorFlow, each including hidden layers,
-specified activation functions for each and for the output layer, as well as accuracy and loss
-function evlauation, and a confusion matrix to verify.
+Classification methods include: Support Vector Classifier (HeartDisease_SVC, Iris_SVC), 
+and Boosted Decision Tree (HeartDisease_BDT). The metrics used for evaluation include: confusion matric, 
+accuracy, specificity, precision, mathew's correlation coefficient, F1 score, ROC and PR curves with
+area under the curve (AUC). Additional plots shown include: pair plots, box plots, violin plots, 
+swarm plots and correlation heat maps. 
 
 Linear regression is implemented with sklearn (CountriesGDPPerCapita_LinearRegression), including the 
 study of some correlation between features. The R-squared score is used for evaluation, and the 
