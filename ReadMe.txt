@@ -56,6 +56,12 @@ correlation heat maps of the dataset features.
 uses the ReLU activation function. For this, I use the PyTorch framework, including the use of
 torch tensors. The NN has two hidden layers, and is trained for 1000 epochs, using the Cross
 Entropy loss function and the Adam criterion for updating the weights, with a learning rate 
-of 0.001. The NN is then evaluated with a correlation matrix and perfectly classifies the dataset.    
+of 0.001. The NN is then evaluated with a correlation matrix and perfectly classifies the dataset.
+
+-Iris_NN_TensorFlow: the Iris dataset is classified with another fully connected neural network,
+this time using TensorFlow. The specifications of this FCNN are almost identical to the ones used
+for PyTorch, two hidden layers with relu as activation function, and softmax for the output layer.
+This time, only 100 epochs are used for training, but the same perfect classification results are
+obtained.    
  
  
