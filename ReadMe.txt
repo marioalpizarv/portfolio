@@ -12,9 +12,8 @@ accuracy, specificity, precision, mathew's correlation coefficient, F1 score, RO
 area under the curve (AUC). Additional plots shown include: pair plots, box plots, violin plots, 
 swarm plots and correlation heat maps. 
 
-Linear regression is implemented with sklearn (CountriesGDPPerCapita_LinearRegression), including the 
-study of some correlation between features. The R-squared score is used for evaluation, and the 
-coefficients of each feature are shown to determine which are the most significant for the predictions.
+Linear regression is implemented with sklearn (Salaries_LinearRegression). The R-squared score 
+is used for evaluation, and a scatter plot is shown along with the least squares straight line.
 
 Clustering is used as a method of unsupervised machine learning (KMeans_WineClustering). Inertia is 
 used for plotting an elbow curve and determine the optimal number of clusters. The metric silhouette
@@ -25,15 +24,13 @@ the separation between clusters.
 ========================================================================================================
 Detalied description of each file:
 
--CountriesGDPPerCapita_LinearRegression: This example uses LinearRegression by sklearn to predict 
-the GDP Per Capita of a list of 195 countries. First, I do some data cleaning. Next, I calculate
-the GDP per capita by dividing each country's GDP column by the Population column. 
-After that, I created the X dataset by removing the target variable 'GDP Per Capita', and
-the Y dataset which includes only the target variable. Afterward, I split the data in training
-and test, using an 80-20 split respectively, initialize the linear regression model, train it,
-and test it with the test dataset. For evaluation, I use the R-square score. I also include
-the coefficients of each feature, to see which is more significant when predicting a country's
-GDP per capita.
+-Salaries_LinearRegression: This example uses LinearRegression by sklearn to predict 
+the salary of employees based on a single feature, the years of employment. First, I do some data cleaning
+and reshaping. After that, I created the X and y datasets with the independent and dependent variables
+respectively. Afterward, I split the data in training and test, using an 80-20 split respectively, 
+initialize the linear regression model, train it, and test it with the test dataset. For evaluation, 
+I use the train and test R-square score, as well as a scatter plot showing both the data points and the 
+straight line obtained.
 
 -HeartDisease_SVC: Here I use a Support Vector Classifier (SVC) with a linear kernel to perform
 binary classification using a dataset with patient symptoms and labels for heart disease or no 
