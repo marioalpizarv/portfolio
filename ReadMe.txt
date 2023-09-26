@@ -95,7 +95,7 @@ is used, along with the intertia metric, the elbow curve and the silhouette metr
 include a pairplot to look for a pair of features that create a good separation between clusters
 and do a scatter plot to show how each cluster is separated from the rest.  
 
-RL_FrozenLake: here I use the frozen lake game, from OpenAi's gym library, as an example of 
+-RL_FrozenLake: here I use the frozen lake game, from OpenAi's gym library, as an example of 
 reinforcement learning. An automatized character explores the lake, consisting of 16 squares with the
 goal of reaching the square with a gift in it. A Q-table is created to store actions and rewards in 
 a pickle file, these actions are every possible move on every possible square. At first the exploration
