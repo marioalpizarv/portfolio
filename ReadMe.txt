@@ -25,6 +25,10 @@ Reinforcement Learning is exemplified with the Frozen Lake game. In this game, a
 explores the frozen lake, comprised of 16 squares, and learns by reinforcing the paths that maximize
 The rewards obtained in avoiding the holes in the lake and reaching the square with the final goal. 
 
+Forecasting and time series analysis techniques are used to predict mean daily temperature based on 
+previous temperature data from a few years back. This analysis achieves an accuracy of 2.6 celsius
+degrees on forecasts.
+
 ========================================================================================================
 Detalied description of each file:
 
@@ -107,4 +111,19 @@ obey random exploration, while an epsilon closer to 0 will make the character dr
 Q-table, choosing the ones with maximum reward, this is called exploitation. The epsilon parameter 
 follows an exponential decay law, based on episodes as a parameter for time. An episode refers to every
 time the character starts and reaches a finishing square (the goal or a hole in the lake). 
+
+-TimeSeriesSeasonalARIMA: in this file, time series analysis techniques are used with a test data set
+that is meant to model revenue overtime, including seasonality, an ascending trend and random variations. 
+Analysis to verify stationarity in the series is carried and verified in various ways. A forecast is made 
+using a SARIMA model, and results are presented incluing a 95% confidence interval. This could have vast 
+implications in forecasting the revenue of a business and related suply chain needs.
+
+-Time_Series_Temperature_Project: a detailed time series analysis is carried here. The dataset is focused
+on daily measurements of the temperature in a city, along with other important weather related factors.
+A detailed exploratory data analysis is carried, as well as series decomposition in seasonal, trend and
+residual components. The stationarity of the series is studied, and finally obtained using differencing.
+Three different methods of forecast are compared: ARIMA, auto ARIMA and Prophet. For this comparison, 
+predictions were made on the test data set and evaluated using mean square error. The Prophet model
+yields the best predictions, confirming that it is possible to predict the mean daily temperature
+using data of a few years back.
 ========================================================================================================
