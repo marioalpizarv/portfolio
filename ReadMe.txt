@@ -1,6 +1,12 @@
 ========================================================================================================
 Short description:
 
+An all around data science project is exemplified in the Capstone Project. This served as the final
+project for the IBM Data Sciente Certificate, which includes data science applications of Python and SQL.
+Among these applications, the project includes important steps towards an all inclusive data science 
+project such as: data science methodology, data analysis, machine learning applications, data visualization
+and presentation of results in a clear and visual manner.
+
 Neural Networks for classification are implemented with PyTorch and TensorFlow (Iris_NN_PyTorch, 
 Iris_NN_TensorFlow). Each of these includes the outline of the input, output and hidden layers, specified 
 activation functions for each layer, as well as accuracy and loss function evlauation, and a confusion 
@@ -31,6 +37,19 @@ degrees on forecasts.
 
 ========================================================================================================
 Detalied description of each file:
+
+-The Capstone Project is focused on a hypothetical space exploration company, which wishes to analyze
+it's main competitor, and obtain useful insights for it's own operations. The main features included
+in this project are:
+->A description of a generalized data science methodology applicable to many markets and scenarios.
+->Obtaining data via web scraping and data base queries with SQL.
+->Data base set up, maintenance and information extraction via SQL queries.
+->Exploratory data analysis for finding the best approach for obtainint useful insights from the data.
+->Advanced data analysis techinques for reachig accurate results.
+->Machine learning applications used for forecasting and providing insightful data driven information.
+->Data visualization methods, useful in determinig the direction of the analysis and presenting findings.
+->Summarizing findings to accurante key results, and communicating these results in a clear and concise
+manner to both technical and non-technical audiences.
 
 -Salaries_LinearRegression: This example uses LinearRegression by sklearn to predict 
 the salary of employees based on a single feature, the years of employment. First, I do some data cleaning
