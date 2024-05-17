@@ -21,6 +21,10 @@ is also used to evaluate the model. a pair plot is also included to look for a p
 a good separation between cluster labels. These features are used to obtain a scatter plot to show 
 the separation between clusters. 
 
+Reinforcement Learning is exemplified with the Frozen Lake game. In this game, an automatized player
+explores the frozen lake, comprised of 16 squares, and learns by reinforcing the paths that maximize
+The rewards obtained in avoiding the holes in the lake and reaching the square with the final goal. 
+
 ========================================================================================================
 Detalied description of each file:
 
@@ -89,5 +93,18 @@ dataset has features for wine from 3 different vineyards, the task is to cluster
 instances and group each to the wineyard it came from. For this, the KMeans algorithm from sklearn
 is used, along with the intertia metric, the elbow curve and the silhouette metric. Lastly, I 
 include a pairplot to look for a pair of features that create a good separation between clusters
-and do a scatter plot to show how each cluster is separated from the rest.    
+and do a scatter plot to show how each cluster is separated from the rest.  
+
+-RL_FrozenLake: here I use the frozen lake game, from OpenAi's gym library, as an example of 
+reinforcement learning. An automatized character explores the lake, consisting of 16 squares with the
+goal of reaching the square with a gift in it. A Q-table is created to store actions and rewards in 
+a pickle file, these actions are every possible move on every possible square. At first the exploration
+Is done randomly, and after enough experience has been obtained, the actions that produce the highest
+rewards are fetched from the q-table, providing the most efficient way to reach the square with the gift
+in the least amount of moves possible. The shift from randomly exploring to fetching movements from the
+q-table is controlled via the epsilon parameter, an epsilon close to 1 means that the actions taken will
+obey random exploration, while an epsilon closer to 0 will make the character draw it's actions from the
+Q-table, choosing the ones with maximum reward, this is called exploitation. The epsilon parameter 
+follows an exponential decay law, based on episodes as a parameter for time. An episode refers to every
+time the character starts and reaches a finishing square (the goal or a hole in the lake). 
 ========================================================================================================
