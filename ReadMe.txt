@@ -185,6 +185,3 @@ with the analytic solution across several time slices, demonstrating how a PINN 
 dynamics and the physical parameter c from limited noisy observations.
 
 ========================================================================================================
-
-
-
