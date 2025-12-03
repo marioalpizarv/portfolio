@@ -4,8 +4,8 @@ Short description:
 An all around data science project is exemplified in the Capstone Project. This served as the final
 project for the IBM Data Sciente Certificate, which includes data science applications of Python and SQL.
 Among these applications, the project includes important steps towards an all inclusive data science 
-project such as: data science methodology, data analysis, machine learning applications, data visualization
-and presentation of results in a clear and visual manner.
+project such as: data science methodology, data analysis, machine learning applications, data 
+visualization and presentation of results in a clear and visual manner.
 
 Neural Networks for classification are implemented with PyTorch and TensorFlow (Iris_NN_PyTorch, 
 Iris_NN_TensorFlow). Each of these includes the outline of the input, output and hidden layers, specified 
@@ -35,6 +35,12 @@ Forecasting and time series analysis techniques are used to predict mean daily t
 previous temperature data from a few years back. This analysis achieves an accuracy of 2.6 celsius
 degrees on forecasts.
 
+Physics-Informed Neural Networks (PINNs) learn solutions to physical systems by enforcing differential 
+equations, boundary conditions, and initial conditions directly in their loss function. Unlike data-only 
+models, they combine measurements with the underlying physics. This project includes demonstrations for 
+a 1D vibrating string, a 2D heat equation, and a 2D electromagnetic wave, showing how PINNs can recover 
+both the fields and physical parameters even from limited or noisy data.
+
 ========================================================================================================
 Detalied description of each file:
 
@@ -52,12 +58,12 @@ in this project are:
 manner to both technical and non-technical audiences.
 
 -Salaries_LinearRegression: This example uses LinearRegression by sklearn to predict 
-the salary of employees based on a single feature, the years of employment. First, I do some data cleaning
-and reshaping. After that, I created the X and y datasets with the independent and dependent variables
-respectively. Afterward, I split the data in training and test, using an 80-20 split respectively, 
-initialize the linear regression model, train it, and test it with the test dataset. For evaluation, 
-I use the train and test R-square score, as well as a scatter plot showing both the data points and the 
-straight line obtained.
+the salary of employees based on a single feature, the years of employment. First, I do some data 
+cleaning and reshaping. After that, I created the X and y datasets with the independent and dependent 
+variables respectively. Afterward, I split the data in training and test, using an 80-20 split 
+respectively, initialize the linear regression model, train it, and test it with the test dataset. For 
+evaluation, I use the train and test R-square score, as well as a scatter plot showing both the data 
+points and the straight line obtained.
 
 -HeartDisease_SVC: Here I use a Support Vector Classifier (SVC) with a linear kernel to perform
 binary classification using a dataset with patient symptoms and labels for heart disease or no 
@@ -146,3 +152,39 @@ predictions were made on the test data set and evaluated using mean square error
 yields the best predictions, confirming that it is possible to predict the mean daily temperature
 using data of a few years back.
 ========================================================================================================
+-Wave Equation PINN: This project implements a Physics-Informed Neural Network (PINN) to solve the 1D 
+wave equation for a vibrating guitar string with fixed ends. The network learns the full spatio-temporal 
+displacement field u(x,t) on a string of length L=1, subject to the initial condition 
+u(x,0) = sin(pi x / L) and zero initial velocity. Depending on the selected mode, the PINN can either 
+solve the forward problem with a known wave speed c, infer the wave speed directly from data, or estimate 
+the linear mass density mu given the tension. The training loss enforces the PDE u_tt = c^2 u_xx, boundary 
+conditions, and initial conditions using automatic differentiation. After training, the script visualizes 
+the learned solution and compares it to the analytic closed-form solution 
+u_true(x,t) = sin(pi x / L) * cos(c pi t / L) through heatmaps and time-slice plots.
+
+-2D Heat Equation PINN: This script implements a Physics-Informed Neural Network (PINN) to solve the 2D 
+heat equation on a unit square and simultaneously infer the unknown thermal diffusivity from noisy sensor 
+measurements. The true solution is generated analytically using a single eigenmode of the Laplacian, and 
+synthetic data with noise is sampled throughout the space-time domain. The PINN enforces the heat equation 
+u_t = D(u_xx + u_yy) at interior collocation points, as well as the initial condition 
+u(x,y,0) = sin(pi x) sin(pi y) and zero Dirichlet boundaries. A fully connected neural network with tanh 
+activations learns the temperature field u(x,y,t), while the diffusivity D is treated as a trainable 
+parameter. After training, the model predicts the temperature field on a grid and compares its output to 
+the exact analytic solution across several time slices, demonstrating how PINNs can combine physics 
+constraints with limited, noisy data to recover both the temperature evolution and the underlying material 
+parameter.
+
+-Electromagnetic Wave in a 2D plane: This script implements a Physics-Informed Neural Network (PINN) that 
+solves the 2D wave equation and infers the unknown wave speed from noisy measurements of an electromagnetic 
+plane wave. Synthetic data is generated from the analytic field E(x,y,t) = sin(kxx + kyy - w*t), where 
+w= csqrt(kx^2 + ky^2). The PINN enforces the PDE E_tt = c^2*(E_xx + E_yy) at randomly sampled collocation 
+points while also fitting the noisy data. A fully connected neural network with tanh activations learns 
+the field E_theta(x,y,t), and the wave speed c is represented as a trainable parameter using log_c to keep 
+it positive. After training, the model reconstructs the wave field on a space-time grid and compares it 
+with the analytic solution across several time slices, demonstrating how a PINN can recover both the wave 
+dynamics and the physical parameter c from limited noisy observations.
+
+========================================================================================================
+
+
+
